@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
-import background from './assets/images/background.jpg'
+import background from './assets/images/background.jpg?raw'
 
 export const globalStyles = css`
   body {
