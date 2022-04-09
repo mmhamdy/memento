@@ -19,17 +19,4 @@ export const Wrapper = styled.div`
   margin: 40px auto;
 `
 
-export const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
-  margin-top: 40px;
-`
 
-export const Placeholder = styled.div`
-  width: 200px;
-  height: 200px;
-  background-color: green;
-  border: 2px solid #fff;
-  border-radius: 6px;
-`
