@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { CardGrid } from './components/CardGrid/CardGrid';
 import { Global } from '@emotion/react';
-import { globalStyles, Wrapper } from './App.styles';
+import { globalStyles, Wrapper, Logo, Button } from './App.styles';
 import { shuffleArray } from './utils/shuffleArray';
 import { CardType, loadCards } from './utils/loadCards';
+import logo from './assets/images/logo.png';
 
 
 function App() {
@@ -31,6 +32,13 @@ function App() {
     setInteraction(true);
   }
 
+  const restartGame = (): void => {
+    setFirstChoice(null);
+    setSecondChoice(null);
+    setCards(shuffleArray(loadCards()))
+    setTurns(0);
+  }
+
   useEffect(() => {
     if (firstChoice && secondChoice) {
       setInteraction(false)
@@ -54,8 +62,10 @@ function App() {
   return (
     <Wrapper>
       <Global styles={globalStyles} />
-      <h1>Bird Matcher</h1>
-      <button>Start Game</button>
+      <Wrapper>
+        <Logo src={logo}/>
+      </Wrapper>
+      <Button onClick={restartGame}>Restart Game</Button>
       <CardGrid 
         cards={cards} 
         firstChoice={firstChoice}
@@ -63,6 +73,7 @@ function App() {
         interaction={interaction} 
         handleChoice={handleChoice}
       />
+      <p>Turn: {turns}</p>
     </Wrapper>
   )
 }
