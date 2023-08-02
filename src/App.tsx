@@ -73,7 +73,7 @@ function App() {
         interaction={interaction} 
         handleChoice={handleChoice}
       />
-      <p>Turn: {turns}</p>
+      <p>Turns: {turns}</p>
     </Wrapper>
   )
 }
